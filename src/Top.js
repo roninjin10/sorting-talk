@@ -1,16 +1,48 @@
 import React, { Component } from 'react';
+import MergeSort from './MergeSort.js';
+
+const merge = {
+  name: 'Merge',
+  category: 'Best Tv Shows',
+  data: [
+    'Sopranos',
+    'The Wire',
+    'Breaking Bad',
+    'Seinfeld',
+    'South Park',
+    'Game of Thrones',
+    'Curb Your Enthusiasm',
+    'Parks and Rec',
+    'Chappelles Show',
+    'Broad City',
+    'Boondocks',
+    'King of the Hill',
+    'Samarai Champloo',
+    'Fullmetal Alchemist',
+    'Westworld',
+    'Who\'s Line Is it Anyways',
+    'Judge Judy',
+    'Weeds',
+    'Silicon Valley',
+    'The Fresh Prince of Bel-Air',
+    'Making the Band 2'
+  ]
+}
+
+
 
 class Top extends Component {
+
   render() {
     return (
       <div className="Top">
         <ul className="sort">
-          <li><button href="http://www.google.com">Insertion</button></li>
-          <li><button href="#">Merge</button></li>
-          <li><button href="#">Heap</button></li>
-          <li><button href="#">Quick</button></li>
-          <li><button href="#">Bubble</button></li>
-          <li><button href="#">Radix</button></li>
+          <MergeSort
+          name={merge.name}
+          category={merge.category}
+          data={merge.data}
+          />
+
         </ul>
       </div>
     );

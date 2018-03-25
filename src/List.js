@@ -1,13 +1,30 @@
 import React, { Component } from 'react';
 
-class App extends Component {
+class List extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      depth1: props.items,
+      depth2: [],
+      depth3: [],
+      depth4: [],
+
+      dic: props.dic
+    };
+  }
+
   render() {
     return (
-      <div className="App">
+      <div className="List">
 
       </div>
     );
   }
 }
 
-export default App;
+List.defaultProps = {
+  items: [],
+  dic: {}
+}
+
+export default List;

@@ -25,3 +25,23 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.Controls ul {
+  list-style-type: none;
+  margin: 10;
+  padding: 0;
+}
+
+.Controls ul li {
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+
+.box {
+  height: 100px;
+  width: 161px;
+  background-color: #00FFFF;
+  border-width: 2px;
+  border-style: solid;
+}
