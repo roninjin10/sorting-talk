@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.sort-types {
+  margin: 0;
+  padding: 0;
+}
+
+.sort-types li {
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+
+.Top ul {
+  margin: 0;
+  padding: 0;
+}
+
+.Top ul li {
+  display: inline;
+  padding: 0;
+  margin: 0;
+}

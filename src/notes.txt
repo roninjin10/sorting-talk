@@ -1,0 +1,24 @@
+Simple Sorts
+
+1. Insertion sort
+
+2. Selection sort
+
+Efficient Sorts
+
+1. Merge sort
+
+2. Heapsort
+
+3. Quick sort
+
+Academic Sorts
+
+1. Bubble Sort
+
+  other sorts: Shell Sort, Comb Sort
+
+Distribution sorts
+1. Radix Sort
+
+  other sorts: Bucket sort, Counting sort
