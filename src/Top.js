@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MergeSort from './MergeSort.js';
+import QuickSort from './QuickSort.js';
 
 const merge = {
   name: 'Merge',
@@ -29,6 +30,65 @@ const merge = {
   ]
 }
 
+const insertion = {
+  name: 'Insertion',
+  category: 'Worst People',
+  data: [
+    'A Slow Driver',
+    'A Nazi',
+    'A Child',
+    'Drake',
+    'King Joffrey',
+    'Kim Jon Un',
+    'Leaver of shopping cart in parking space',
+    'William Cory',
+  ]
+}
+
+const heap = {
+  name: 'HeapSort',
+  category: 'Best Cities',
+  data: [
+    'Columbus',
+    'San Francisco',
+    'New York City',
+    'San Diego',
+    'Los Angeles',
+    'Chicago',
+    'Portland',
+    'Seattle',
+    'Washington DC',
+    'Pittsburgh',
+    'Denver',
+    'Las Vegas',
+  ]
+}
+
+const quick = {
+  name: 'Quick Sort',
+  category: 'Would win fight',
+  data: [
+    'Hailey with crossbow',
+    'Robin with war hammer',
+    'Cody with broadsword',
+    'Chucky with katana',
+    'Peter with sais',
+    'Ralph with nunchaku',
+    'Rebecca with spartan spear and shield',
+    'Lena with shuriken'
+  ]
+}
+
+const bucket = {
+  name: 'Bucket Sort',
+  category: `
+    Favorite Food:
+    Buckets: extrem
+  `,
+  data: [
+
+  ]
+}
 
 
 class Top extends Component {
@@ -43,6 +103,11 @@ class Top extends Component {
           data={merge.data}
           />
 
+          <QuickSort
+          name={quicksort.name}
+          category={quicksort.category}
+          data={quicksort.data}
+          />
         </ul>
       </div>
     );

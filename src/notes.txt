@@ -1,3 +1,5 @@
+God's sorting algorithm
+
 Simple Sorts
 
 1. Insertion sort
@@ -17,7 +19,7 @@ Academic Sorts
 1. Bubble Sort
 
   other sorts: Shell Sort, Comb Sort
-
+11211234561
 Distribution sorts
 1. Radix Sort
 
