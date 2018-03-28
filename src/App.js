@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Draggable from 'react-draggable'
-import { CSSTransitionGroup } from 'react-transition-group'
 import NodeGroup from "react-move/NodeGroup";
 import { range } from "d3-array";
 import { easeExpOut } from "d3-ease";
@@ -46,9 +44,6 @@ class App extends Component {
     let out = []
     this.setState({algoName: items.name, category: items.category})
 
-    let bottom = 500
-    let right = 0
-
     items.data.forEach(item => {
 
       out.push(
@@ -85,15 +80,8 @@ class App extends Component {
     this.renderNewItems(selection)
   }
 
-  runMergeSort() {
-    let items = this.state.items.slice()
-
-  }
-
-  //asdfasdlk;fjaslkdfjlaksdfj
   handleClick = (e) => {
     console.log(e, e.type)
-    //console.log('double click')
   }
 
   handleTouchStart = (pos, pressY, { touches: [{ pageY }] }) => {
@@ -125,7 +113,6 @@ class App extends Component {
       isPressed: true,
       lastPressed: pos
     });
-    turnRed = true
     window.addEventListener("onKeyPress", this.handleKeyPress);
     window.addEventListener("mousemove", this.handleMouseMove);
     window.addEventListener("mouseup", this.handleMouseUp);
@@ -182,35 +169,7 @@ class App extends Component {
     window.removeEventListener("touchmove", this.handleTouchMove);
     window.removeEventListener("touchend", this.handleTouchEnd);
   };
-/*
-const mergeSort = array => {
-  if (array.length === 1) {
-    return array
-  }
-  const middle = Math.floor(array.length/2)
-  const front = array.slice(0, middle)
-  const back = array.slice(middle, array.length)
 
-  return mergeStep(mergeSort(front), mergeSort(back))
-}
-
-const mergeStep = (array1, array2) => {
-  let out = []
-  while (array1.length && array2.length) {
-    let x1 = array1[0]
-    let x2 = array2[0]
-
-    if (compare(x1, x2)) {
-      out.push(x1)
-      array1.shift()
-    } else {
-      out.push(x2)
-      array2.shift()
-    }
-  }
-  return out.concat(array1, array2)
-}
-*/
 
   renderList(items) {
     const { mouseY, isPressed, lastPressed, order } = this.state;
@@ -288,44 +247,21 @@ const mergeStep = (array1, array2) => {
   }
 }
 
-
-let turnRed = true;
-/*
-<Draggable>
-          <div className="box" style={{position: 'absolute', bottom: '100px', right: '100px'}}>
-            I already have an absolute position.
-          </div>
-        </Draggable>
-*/
-const compare = (a, b) => a > b
-
-const mergeSort = array => {
-  if (array.length === 1) {
-    return array
-  }
-  const middle = Math.floor(array.length/2)
-  const front = array.slice(0, middle)
-  const back = array.slice(middle, array.length)
-
-  return mergeStep(mergeSort(front), mergeSort(back))
+// Movable List
+function updateOrder(arr, beg, end) {
+  const copy = arr.slice(0);
+  const val = copy[beg];
+  copy.splice(beg, 1);
+  copy.splice(end, 0, val);
+  return copy;
 }
 
-const mergeStep = (array1, array2) => {
-  let out = []
-  while (array1.length && array2.length) {
-    let x1 = array1[0]
-    let x2 = array2[0]
-
-    if (compare(x1, x2)) {
-      out.push(x1)
-      array1.shift()
-    } else {
-      out.push(x2)
-      array2.shift()
-    }
-  }
-  return out.concat(array1, array2)
+function clamp(n, min, max) {
+  return Math.max(Math.min(n, max), min);
 }
+
+let itemsCount = 16;
+const itemHeight = 75; // set list-item height and line-height in css as well
 
 const bubble = {
   name: 'Bubble Sort',
@@ -352,19 +288,6 @@ const merge = {
     {name: 'Game of Thrones', img: ''},
     {name: '', img: ''}
   ]
-}
-
-const insertionSort = array => {
-  let out = []
-  for (let i = 0; i < array.length; i++) {
-    let next = array.shift()
-    let insertIndex = out.length
-    while(insertIndex && compare(next, out[insertIndex])) {
-      insertIndex--
-    }
-    out.splice(insertIndex,0,next)
-  }
-  return out
 }
 
 const selection = {
@@ -412,23 +335,5 @@ const quick = {
 
   ]
 }
-
-// Movable List
-
-
-function updateOrder(arr, beg, end) {
-  const copy = arr.slice(0);
-  const val = copy[beg];
-  copy.splice(beg, 1);
-  copy.splice(end, 0, val);
-  return copy;
-}
-
-function clamp(n, min, max) {
-  return Math.max(Math.min(n, max), min);
-}
-
-let itemsCount = 16;
-const itemHeight = 75; // set list-item height and line-height in css as well
 
 export default App
